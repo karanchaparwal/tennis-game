@@ -1,0 +1,28 @@
+<!doctype html>
+
+game starting code.
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+
+/*The canvas element is the actual DOM node that's embedded in the HTML page.  The 
+canvas context is an object with properties and methods that you can use to render 
+graphics inside the canvas element.  The context can be 2d or webgl (3d).*/
+
+var canvas;
+var canvasContext;
+
+	window.onload = function(){ 
+		console.log("No error");
+		canvas = document.getElementById('gameCanvas')
+		canvasContext = canvas.getContext('2d');
+		canvasContext.fillStyle = 'black';
+		canvasContext.fillRect(0,0,canvas.width,canvas.height);
+		canvasContext.fillStyle = 'white';
+		canvasContext.fillRect(300,200,200,200);
+
+}
+
+</script>
+
+</html> 

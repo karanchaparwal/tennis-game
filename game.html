@@ -11,15 +11,33 @@ graphics inside the canvas element.  The context can be 2d or webgl (3d).*/
 
 var canvas;
 var canvasContext;
-
+var ballX=50;
+	
+	// onload function will run only if the page is fully loaded.
 	window.onload = function(){ 
 		console.log("No error");
+		
 		canvas = document.getElementById('gameCanvas')
 		canvasContext = canvas.getContext('2d');
+		
+		setInterval(drawEverything,50); //To reduce the speed of comp speed so that changes can be seen
+ 				
+}
+
+function drawEverything(){
+	 ballX = ballX + 5; //variable to alter the position of the canvas object.
+
+		console.log(ballX)
 		canvasContext.fillStyle = 'black';
 		canvasContext.fillRect(0,0,canvas.width,canvas.height);
 		canvasContext.fillStyle = 'white';
 		canvasContext.fillRect(300,200,200,200);
+		canvasContext.fillStyle = 'red';
+		canvasContext.fillRect(ballX,200,50,25);
+		canvasContext.fillStyle = 'orange';
+		canvasContext.fillRect(200,300,ballX,25);
+		
+
 
 }
 

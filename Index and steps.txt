@@ -1,0 +1,7 @@
+
+
+
+Create a function to group all Draw Code
+Using a variable to Vary Shape Draw position
+Slow Motion Ove(Basic Dynamic Animation)
+Increase update rate for Smoother Movement

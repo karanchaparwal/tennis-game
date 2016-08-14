@@ -23,9 +23,9 @@ var ballSpeedX = 10;
 		var framesPerSecond = 30; // frame rate 
 		//callBoth function inline in below line to make it fast and easy.
 		setInterval(function (){
-			drawEverything();
-			moveEverything();
-},1000/framesPerSecond); //To reduce the speed of comp speed so that changes can be seen
+						drawEverything();
+						moveEverything();
+					},1000/framesPerSecond); //To reduce the speed of comp speed so that changes can be seen
  				
 }
 
@@ -58,10 +58,19 @@ function drawEverything(){
 		colorRect(0,0,canvas.width,canvas.height,'black');
 		//left player paddle
 		colorRect(0,200,10,100,'white');
-		//This is used to create a ball
-		colorRect(ballX,200,10,10,'red');
 
-		
+		//This is used to create a ball
+		//colorRect(ballX,200,10,10,'red');
+		// Making Ball Circle .
+		colorCircle(ballX,150, 10, 'white');
+}
+
+//helper function to draw a circle
+function colorCircle(centerX, centerY, radius, drawColor){
+		canvasContext.fillStyle = drawColor;
+		canvasContext.beginPath();
+		canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true); //5th argument is in rad pi rad =180' so full circle is 2 pi and 6th tells the rotation clock or anti
+		canvasContext.fill();
 }
 
 //#Change3

@@ -25,3 +25,9 @@ Change 3 :
 7)Bounce the Ball Off the Left Canvas Side Too. 
 8)Creating Functions for Drawing the Filled Shapes.
 9)Use Comments to Document Code Purpose.
+
+Change 4:
+1)Making the ball Round(circle)
+2)
+3)
+4)

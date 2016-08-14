@@ -15,7 +15,13 @@ var ballY = 50;
 var ballSpeedX = 10;
 var ballSpeedY = 4;
 
+var player1Score = 0;
+var player2Score = 0;
+
 var paddle1Y = 250;
+var paddle2Y =250;
+
+const PADDLE_THICKNESS = 10;
 const PADDLE_HEIGHT = 100; // paddle height must be a constant.
 
 function calculateMousePos(evt) {
@@ -54,14 +60,29 @@ function ballReset(){
 	ballX = canvas.width/2;
 	ballY = canvas.height/2;
 }
+function computerMovement(){
+	var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
+	if(paddle2YCenter < ballY-35){  //70 px lenght span the motion smooths out
+			paddle2Y += 6;		
+	} else if(paddle2YCenter > ballY+35){
+			paddle2Y -= 6; 
+	}
+}
 
 function moveEverything(){
+	computerMovement();
 	 ballX = ballX + ballSpeedX; //variable to alter the position of the canvas object.
     // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
      ballY = ballY + ballSpeedY; //variable to alter the position of the canvas object.
      // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
   	if(ballX  > canvas.width){  //Do not try to hardcode canvas width as we may increase it later on.
-  		ballSpeedX = -ballSpeedX;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
+  	//	ballSpeedX = -ballSpeedX;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
+  	if(ballY > paddle2Y && ballY < paddle2Y + PADDLE_HEIGHT ){
+  			ballSpeedX = -ballSpeedX;
+  		} else{
+  			ballReset();
+  			player1Score++;
+  	  }
   	}
   	//Left Paddle Programming reflection
   	if(ballX < 0){
@@ -71,6 +92,7 @@ function moveEverything(){
   		}
   		else{
   			ballReset();
+  			player2Score += 1;
   	  }
 }
   	if(ballY  > canvas.height){  //Do not try to hardcode canvas width as we may increase it later on.
@@ -99,12 +121,19 @@ function drawEverything(){
 		colorRect(0,0,canvas.width,canvas.height,'black');
 		
 		//left player paddle
-		colorRect(0,paddle1Y,10,PADDLE_HEIGHT,'white'); //paddle1y to change y axis position
+		colorRect(0,paddle1Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white'); //paddle1y to change y axis position
+		
+		//right computer paddle
+		colorRect(canvas.width-PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white'); //paddle1y to 
+		
 
 		//This is used to create a ball
-		//colorRect(ballX,200,10,10,'red');
 		// Making Ball Circle .
 		colorCircle(ballX,ballY, 10, 'white');
+
+		canvasContext.fillText(player1Score,100,100);
+		canvasContext.fillText(player2Score,canvas.width-100,100);
+
 }
 
 //helper function to draw a circle

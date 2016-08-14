@@ -42,12 +42,21 @@ Change 5:
 6)Align the Paddle's Center on the Mouse Y Position
 
 Change 6:
-1)Write a Function That Can Reset the Ball,
+1)Write a Function That Can Reset the Ball.
 2)Reset the Ball when it Reaches the Left Side.
 3)Switch the Ball's Direction Each Time It's Scored.
 4)Bounce the Ball It It Gets Blocked by Left Paddle.
 5)Draw a Second Paddle for the Right Side.
-6)
-7)
-8)
-9)
+6)Create a Value Label for Paddle Thickness.
+7)Temporarily Use Mouse for Testing Right Paddle.
+8)Reset the Ball If It Goes Past the Right Edge.
+9)Give Mouse Control to the Left Side Again.
+
+Change 7:
+1)Get Right Paddle Chasing the Ball's Vertical Pos.
+2)Style Shift: From A=A+B to the Shorter A+=B Form.
+3)Test Out How the Right Paddle Moves So Far.
+4)Line Up Right Paddle's Center(Not Top!) to Ball.
+5)Stop Right Paddle Shake(Sit Still if Close Enough).
+6)Put Text on the Screen to Use for Score Display.
+7)Set Up,Update and Show Score Values on Screen.

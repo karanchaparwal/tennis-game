@@ -40,3 +40,14 @@ Change 5:
 4)Set Padding position Value Whenever Mouse Moves.
 5)Use Paddle's Position Var in the Paddle's Draw Code.
 6)Align the Paddle's Center on the Mouse Y Position
+
+Change 6:
+1)Write a Function That Can Reset the Ball,
+2)Reset the Ball when it Reaches the Left Side.
+3)Switch the Ball's Direction Each Time It's Scored.
+4)Bounce the Ball It It Gets Blocked by Left Paddle.
+5)Draw a Second Paddle for the Right Side.
+6)
+7)
+8)
+9)

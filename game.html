@@ -49,6 +49,12 @@ function calculateMousePos(evt) {
  				});
 }
 
+function ballReset(){
+	ballSpeedX = -ballSpeedX;
+	ballX = canvas.width/2;
+	ballY = canvas.height/2;
+}
+
 function moveEverything(){
 	 ballX = ballX + ballSpeedX; //variable to alter the position of the canvas object.
     // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
@@ -57,16 +63,23 @@ function moveEverything(){
   	if(ballX  > canvas.width){  //Do not try to hardcode canvas width as we may increase it later on.
   		ballSpeedX = -ballSpeedX;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
   	}
+  	//Left Paddle Programming reflection
   	if(ballX < 0){
-  		ballSpeedX = -ballSpeedX; 
+  		//ballSpeedX = -ballSpeedX; 
+  		if(ballY > paddle1Y && ballY < paddle1Y + PADDLE_HEIGHT ){
+  			ballSpeedX = -ballSpeedX;
+  		}
+  		else{
+  			ballReset();
   	  }
+}
   	if(ballY  > canvas.height){  //Do not try to hardcode canvas width as we may increase it later on.
   		ballSpeedY = -ballSpeedY;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
   	}
+
   	if(ballY < 0){
   		ballSpeedY = -ballSpeedY; 
   	  }
-  	
 }
 
 function drawEverything(){
@@ -106,7 +119,6 @@ function colorCircle(centerX, centerY, radius, drawColor){
 function colorRect(leftX,topY,width,height,drawColor){
 		canvasContext.fillStyle = drawColor;
 		canvasContext.fillRect(leftX,topY,width,height);
-
 }		
 </script>
 

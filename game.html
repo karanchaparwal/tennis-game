@@ -20,18 +20,28 @@ var ballX=50;
 		canvas = document.getElementById('gameCanvas')
 		canvasContext = canvas.getContext('2d');
 		
-		setInterval(drawEverything,50); //To reduce the speed of comp speed so that changes can be seen
+		var framesPerSecond = 30; // frame rate 
+		//callBoth function inline in below line to make it fast and easy.
+		setInterval(function (){
+			drawEverything();
+			moveEverything();
+},1000/framesPerSecond); //To reduce the speed of comp speed so that changes can be seen
  				
 }
 
-function drawEverything(){
+
+function moveEverything(){
 	 ballX = ballX + 5; //variable to alter the position of the canvas object.
+}
+
+
+function drawEverything(){
 
 		console.log(ballX)
 		canvasContext.fillStyle = 'black';
 		canvasContext.fillRect(0,0,canvas.width,canvas.height);
 		canvasContext.fillStyle = 'white';
-		canvasContext.fillRect(300,200,200,200);
+		canvasContext.fillRect(0,200,10,100);
 		canvasContext.fillStyle = 'red';
 		canvasContext.fillRect(ballX,200,50,25);
 		canvasContext.fillStyle = 'orange';

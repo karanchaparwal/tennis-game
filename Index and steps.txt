@@ -1,7 +1,15 @@
 
 
+change 1:
+1) Create a function to group all Draw Code
+2) Using a variable to Vary Shape Draw position
+3) Slow Motion Ove(Basic Dynamic Animation)
+4) Increase update rate for Smoother Movement
 
-Create a function to group all Draw Code
-Using a variable to Vary Shape Draw position
-Slow Motion Ove(Basic Dynamic Animation)
-Increase update rate for Smoother Movement
+
+Change 2 :
+1) frame rate for smoother operation 
+2) move and resize the box
+(it'll become a paddle.)
+3)Seperate the move code from draw code.
+4)write the function in inline mode.

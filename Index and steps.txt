@@ -27,7 +27,16 @@ Change 3 :
 9)Use Comments to Document Code Purpose.
 
 Change 4:
-1)Making the ball Round(circle)
-2)
-3)
-4)
+1)Making the ball Round(circle).
+2)Break down of each line in filled Circle Draw.
+3)Radians for the Start and End of the Drawn Arc.
+4)Dealing With Circle's Center,Radius, and Color.
+5)Create a Function to Draw Any Filled Circle.
+
+Change 5:
+1) Move and Bounce the Ball Vertically Too.
+2)Define Labeled Values for Paddle Position and Size.
+3)Find the Mouse Position Relative to Game Canvas.
+4)Set Padding position Value Whenever Mouse Moves.
+5)Use Paddle's Position Var in the Paddle's Draw Code.
+6)Align the Paddle's Center on the Mouse Y Position

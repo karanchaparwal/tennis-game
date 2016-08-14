@@ -11,7 +11,23 @@ graphics inside the canvas element.  The context can be 2d or webgl (3d).*/
 var canvas;
 var canvasContext;
 var ballX = 50;
+var ballY = 50;
 var ballSpeedX = 10;
+var ballSpeedY = 4;
+
+var paddle1Y = 250;
+const PADDLE_HEIGHT = 100; // paddle height must be a constant.
+
+function calculateMousePos(evt) {
+	var rect = canvas.getBoundingClientRect();
+	var root = document.documentElement;
+	var mouseX = evt.clientX - rect.left - root.scrollLeft;
+	var mouseY = evt.clientY - rect.top - root.scrollTop;
+	return{ 		//Technically this is one return value,it's just a javascript "Object Literal" 
+			x:mouseX,
+			y:mouseY
+	};
+}
 	
 	// onload function will run only if the page is fully loaded.
 	window.onload = function(){ 
@@ -26,17 +42,29 @@ var ballSpeedX = 10;
 						drawEverything();
 						moveEverything();
 					},1000/framesPerSecond); //To reduce the speed of comp speed so that changes can be seen
- 				
+ 		canvas.addEventListener('mousemove',
+ 				function(evt){
+ 						var mousePos = calculateMousePos(evt);
+ 						paddle1Y = mousePos.y - (PADDLE_HEIGHT/2); //sub half paddle height to center the mouse pointer
+ 				});
 }
 
 function moveEverything(){
 	 ballX = ballX + ballSpeedX; //variable to alter the position of the canvas object.
-  // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
+    // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
+     ballY = ballY + ballSpeedY; //variable to alter the position of the canvas object.
+     // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
   	if(ballX  > canvas.width){  //Do not try to hardcode canvas width as we may increase it later on.
   		ballSpeedX = -ballSpeedX;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
   	}
   	if(ballX < 0){
   		ballSpeedX = -ballSpeedX; 
+  	  }
+  	if(ballY  > canvas.height){  //Do not try to hardcode canvas width as we may increase it later on.
+  		ballSpeedY = -ballSpeedY;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
+  	}
+  	if(ballY < 0){
+  		ballSpeedY = -ballSpeedY; 
   	  }
   	
 }
@@ -56,13 +84,14 @@ function drawEverything(){
 
 		//Black Canvas Field For Game
 		colorRect(0,0,canvas.width,canvas.height,'black');
+		
 		//left player paddle
-		colorRect(0,200,10,100,'white');
+		colorRect(0,paddle1Y,10,PADDLE_HEIGHT,'white'); //paddle1y to change y axis position
 
 		//This is used to create a ball
 		//colorRect(ballX,200,10,10,'red');
 		// Making Ball Circle .
-		colorCircle(ballX,150, 10, 'white');
+		colorCircle(ballX,ballY, 10, 'white');
 }
 
 //helper function to draw a circle

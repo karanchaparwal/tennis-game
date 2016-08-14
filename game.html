@@ -1,6 +1,5 @@
 <!doctype html>
 
-game starting code.
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 
 <script>
@@ -11,7 +10,8 @@ graphics inside the canvas element.  The context can be 2d or webgl (3d).*/
 
 var canvas;
 var canvasContext;
-var ballX=50;
+var ballX = 50;
+var ballSpeedX = 10;
 	
 	// onload function will run only if the page is fully loaded.
 	window.onload = function(){ 
@@ -29,28 +29,47 @@ var ballX=50;
  				
 }
 
-
 function moveEverything(){
-	 ballX = ballX + 5; //variable to alter the position of the canvas object.
+	 ballX = ballX + ballSpeedX; //variable to alter the position of the canvas object.
+  // ballSpeedX = ballSpeedX +1; just increasing speed every frame.
+  	if(ballX  > canvas.width){  //Do not try to hardcode canvas width as we may increase it later on.
+  		ballSpeedX = -ballSpeedX;//Note instead of hardcoding the speed we are using the ballspeedX negative so return speed is also same.
+  	}
+  	if(ballX < 0){
+  		ballSpeedX = -ballSpeedX; 
+  	  }
+  	
 }
-
 
 function drawEverything(){
 
 		console.log(ballX)
-		canvasContext.fillStyle = 'black';
-		canvasContext.fillRect(0,0,canvas.width,canvas.height);
-		canvasContext.fillStyle = 'white';
-		canvasContext.fillRect(0,200,10,100);
-		canvasContext.fillStyle = 'red';
-		canvasContext.fillRect(ballX,200,50,25);
-		canvasContext.fillStyle = 'orange';
-		canvasContext.fillRect(200,300,ballX,25);
+		//canvasContext.fillStyle = 'black';
+		//canvasContext.fillRect(0,0,canvas.width,canvas.height);
+		//canvasContext.fillStyle = 'white';
+		//canvasContext.fillRect(0,200,10,100);
+		//canvasContext.fillStyle = 'red';
+		//canvasContext.fillRect(ballX,200,10,10);
+		//canvasContext.fillStyle = 'orange';
+		//canvasContext.fillRect(200,300,ballX,25);
+		// Create a generic function for reducing two lines in one.
+
+		//Black Canvas Field For Game
+		colorRect(0,0,canvas.width,canvas.height,'black');
+		//left player paddle
+		colorRect(0,200,10,100,'white');
+		//This is used to create a ball
+		colorRect(ballX,200,10,10,'red');
+
 		
-
-
 }
 
+//#Change3
+function colorRect(leftX,topY,width,height,drawColor){
+		canvasContext.fillStyle = drawColor;
+		canvasContext.fillRect(leftX,topY,width,height);
+
+}		
 </script>
 
 </html> 

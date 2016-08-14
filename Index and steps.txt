@@ -1,15 +1,27 @@
 
 
-change 1:
-1) Create a function to group all Draw Code
-2) Using a variable to Vary Shape Draw position
-3) Slow Motion Ove(Basic Dynamic Animation)
-4) Increase update rate for Smoother Movement
+Change 1:
+1) Create a function to group all Draw Code.
+2) Using a variable to Vary Shape Draw position.
+3) Slow Motion Ove(Basic Dynamic Animation).
+4) Increase update rate for Smoother Movement.
 
 
 Change 2 :
 1) frame rate for smoother operation 
-2) move and resize the box
+2) move and resize the box.
 (it'll become a paddle.)
 3)Seperate the move code from draw code.
 4)write the function in inline mode.
+
+
+Change 3 :
+1) Notice that all the code is in same files (We will seperate it.)
+2) Create a Variable to Support Speed Changes.
+3) Get the Ball Moving in the opposite Direction.
+4) Bounce the Ball Off the Right Canvas Side.
+5)Keep the Ball Speed the Same After Walll Bounce.(try unhardcoding the speed)
+6)Using Canvas Dimensions instead of "Hard Coding"
+7)Bounce the Ball Off the Left Canvas Side Too. 
+8)Creating Functions for Drawing the Filled Shapes.
+9)Use Comments to Document Code Purpose.

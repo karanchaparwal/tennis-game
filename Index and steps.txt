@@ -60,3 +60,14 @@ Change 7:
 5)Stop Right Paddle Shake(Sit Still if Close Enough).
 6)Put Text on the Screen to Use for Score Display.
 7)Set Up,Update and Show Score Values on Screen.
+
+Change 8:
+1)Give Ball Control Based on Where it Hits the Paddles.
+2)Reset Both Team Scores When Either Team Wins.
+3)Increase the vertical speed at different lenght of paddle.
+4)Stop the Game When Either Side Wins.
+
+Change 9:
+1)Restart Upon Mouse Click When Viewing End Screen.
+2)
+3)

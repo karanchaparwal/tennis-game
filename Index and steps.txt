@@ -69,5 +69,5 @@ Change 8:
 
 Change 9:
 1)Restart Upon Mouse Click When Viewing End Screen.
-2)
-3)
+2)Declare on the the End Screen Which Paddle Side Won
+3)Draw the Dashed Line Net Down The Playfield Center
